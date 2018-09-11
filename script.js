@@ -1,3 +1,4 @@
+console.log("ye");
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFkZWxlaW5lam9oYW5zb24iLCJhIjoiY2lzczduYzJ4MDZrODJucGh0Mm1xbmVxNCJ9.i7q4iT8FFgh_y5v4we5UhQ';
 var map = new mapboxgl.Map({
     style: 'mapbox://styles/nazmulkhan/cj9o2355m3zee2sno482rpchg',
@@ -74,58 +75,6 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
     var layers = document.getElementById('menu');
     layers.appendChild(link);
 }
-
-// map.addControl(new mapboxgl.NavigationControl());
-// POP UP TeXT
-
-// map.on('click', function (e) {
-//     var features = map.queryRenderedFeatures(e.point, { layers: ['buildingEnvelopes'] });
-//     if (!features.length) {
-//         return;
-//     }
-
-//     var feature = features[0];
-//     var feat = features.length;
-
-//     var popup = new mapboxgl.Popup()
-//         .setLngLat(map.unproject(e.point))
-//         .setHTML(feature.properties.tag)
-//         .addTo(map);
-
-// // Use the same approach as above to indicate that the symbols are clickable
-// // by changing the cursor style to 'pointer'.
-// map.on('mousemove', function (e) {
-//     var features = map.queryRenderedFeatures(e.point, { layers: ['buildingEnvelopes'] });
-//     map.getCanvas().style.cursor = feat ? 'pointer' : '';
-// });
-
-
-   // map.on('click', 'buildingEnvelopes', function (e) {
-   //      var coordinates = e.features[0].geometry.coordinates.slice();
-   //      var description = e.features[0].properties.tag;
-
-   //      // Ensure that if the map is zoomed out such that multiple
-   //      // copies of the feature are visible, the popup appears
-   //      // over the copy being pointed to.
-   //      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-   //          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-   //      }
-
-   //      new mapboxgl.Popup()
-   //          .setLngLat(coordinates)
-   //          .setHTML(description)
-   //          .addTo(map);
-   //  });
-
-   //  // Change the cursor to a pointer when the mouse is over the places layer.
-   //  map.on('mouseenter', 'buildingEnvelopes', function () {
-   //      map.getCanvas().style.cursor = 'pointer';
-   //  });
-
-   //  // Change it back to a pointer when it leaves.
-   //  map.on('mouseleave', 'buildingEnvelopes', function () {
-   //      map.getCanvas().style.cursor = '';
-   //  });
 
 
 
