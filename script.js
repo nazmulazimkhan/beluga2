@@ -42,39 +42,39 @@ map.on('load', function() {
             }
     });
 
-//LIST OF LayerIDs and Display Text
-var toggleableLayerIds = ['buildingEnvelopes'];
-var toggleableLayerText = ['envelopes'];
+// //LIST OF LayerIDs and Display Text
+// var toggleableLayerIds = ['buildingEnvelopes'];
+// var toggleableLayerText = ['envelopes'];
 
-//TOGGLE
-for (var i = 0; i < toggleableLayerIds.length; i++) {
-    var id = toggleableLayerIds[i];
-    var idText= toggleableLayerText[i];
-    var link = document.createElement('a');
-    link.href = '#';
-    link.className = 'active';
-    link.textContent = idText;
-    link.textId = id;
+// //TOGGLE
+// for (var i = 0; i < toggleableLayerIds.length; i++) {
+//     var id = toggleableLayerIds[i];
+//     var idText= toggleableLayerText[i];
+//     var link = document.createElement('a');
+//     link.href = '#';
+//     link.className = 'active';
+//     link.textContent = idText;
+//     link.textId = id;
 
-    link.onclick = function (e) {
-        var clickedLayer = this.textId;
-        e.preventDefault();
-        e.stopPropagation();
+//     link.onclick = function (e) {
+//         var clickedLayer = this.textId;
+//         e.preventDefault();
+//         e.stopPropagation();
 
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+//         var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
 
-        if (visibility === 'visible') {
-            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-            this.className = '';
-        } else {
-            this.className = 'active';
-            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-        }
-    };
+//         if (visibility === 'visible') {
+//             map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+//             this.className = '';
+//         } else {
+//             this.className = 'active';
+//             map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+//         }
+//     };
 
-    var layers = document.getElementById('menu');
-    layers.appendChild(link);
-}
+//     var layers = document.getElementById('menu');
+//     layers.appendChild(link);
+// }
 
 
 
