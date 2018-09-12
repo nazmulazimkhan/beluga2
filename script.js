@@ -18,7 +18,7 @@ console.log("nah");
 map.on('load', function() {
     map.addSource('BelugaGen_HobSunFsr', {
                     'type': 'geojson',
-                    'data': './GeoJSON/BelugaGen_Fsr.geojson'
+                    'data': './GeoJSON/BelugaGen_HobSunFsr.geojson'
                 })
 console.log("meh");
 
