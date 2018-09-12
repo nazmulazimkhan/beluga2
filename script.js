@@ -12,15 +12,12 @@ var map = new mapboxgl.Map({
     container: 'map'
 });
 
-console.log("nah");
-
 //LOAD GEOJSON
 map.on('load', function() {
     map.addSource('BelugaGen_HobSunFsr', {
                     'type': 'geojson',
                     'data': './GeoJSON/BelugaGen_HobSunFsr.geojson'
                 })
-console.log("meh");
 
 
 //ADD LAYER TO MAP
@@ -28,7 +25,10 @@ console.log("meh");
         "id": "buildingEnvelopes",
         "type": "fill-extrusion",
         "source": "BelugaGen_HobSunFsr",
-           'paint': {
+        'layout': {
+            'visibility': 'visible'
+            },
+        'paint': {
                 'fill-extrusion-color' : {
                     'property': 'colour',
                     'type': 'identity'
@@ -44,7 +44,7 @@ console.log("meh");
                  'fill-extrusion-opacity': .5
             }
     });
-console.log("k");
+
 //LIST OF LayerIDs and Display Text
 var toggleableLayerIds = ['buildingEnvelopes'];
 var toggleableLayerText = ['envelopes'];
@@ -82,7 +82,4 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 
 
 
-});''
-
-
-console.log("alright");
+});
