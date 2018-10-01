@@ -77,8 +77,38 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 
     var layers = document.getElementById('menu');
     layers.appendChild(link);
-}
+};
 
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+// When a click event occurs near a polygon, open a popup at the location of
+// the feature, with description HTML from its properties.
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['buildingEnvelopes'] });
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+    var feat = features.length;
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(map.unproject(e.point))
+        .setHTML("<div>"+feature.properties.tag+"</div>")
+        .addTo(map);
+
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'states-layer', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'states-layer', function () {
+        map.getCanvas().style.cursor = '';
+    });
+
+});
 
 
 

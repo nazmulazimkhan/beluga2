@@ -109,12 +109,10 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 font-size: 20px;
 /*background: rgba(255, 255, 255, 0.7);*/
 }
-
 .mapboxgl-popup {
-    max-width: 25%;
+    max-width: 400px;
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
-
  #drop_zone {
 width: 16%;
 height: 3%;
